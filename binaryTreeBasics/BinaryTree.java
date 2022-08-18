@@ -44,12 +44,21 @@ public class BinaryTree {
 		preOrderTraversal(root.left); // Left
 		preOrderTraversal(root.right); // Right
 	}
+	void postOrderTraversal(Node root){
+		if(root == null) return;
+		
+		postOrderTraversal(root.left); // left.
+		postOrderTraversal(root.right); // right.
+		System.outr.println(root.data); //rootNode.
+		
+	}
 	
 	int heightOfABinaryTree(Node root) {
 		if(root == null) return 0;
 		
 		int lh = heightOfABinaryTree(root.left);
 		int rh = heightOfABinaryTree(root.right);
+		
 		
 		return Math.max(lh, rh) + 1;
 	}
